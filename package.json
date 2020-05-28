@@ -1,0 +1,36 @@
+{
+  "name": "hello-ui",
+  "version": "1.0.0",
+  "description": "移动端UI框架",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --config build/webpack.dev.js",
+    "build": "webpack --config build/webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lileyong/hello-ui.git"
+  },
+  "keywords": [
+    "移动端",
+    "UI",
+    "框架"
+  ],
+  "author": "promise.li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lileyong/hello-ui/issues"
+  },
+  "homepage": "https://github.com/lileyong/hello-ui#readme",
+  "devDependencies": {
+    "css-loader": "^3.5.3",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "zepto": "^1.2.0"
+  }
+}

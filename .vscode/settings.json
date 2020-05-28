@@ -1,0 +1,13 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "vetur.format.options.tabSize": 4,
+    "vetur.format.defaultFormatter.html": "prettyhtml",
+    "vetur.format.defaultFormatter.js": "vscode-typescript",
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+}
