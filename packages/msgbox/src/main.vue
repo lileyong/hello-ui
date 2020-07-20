@@ -1,3 +1,44 @@
+<template>
+    <div v-if="show" class="msgbox-wrap">
+        <div class="msgbox-bg"></div>
+        <div class="msgbox">
+            <div class="msgbox-header">
+                {{ title }}
+                <span class="close" @click="handleClose"></span>
+            </div>
+            <div class="msgbox-content">{{ content }}</div>
+            <div class="msgbox-footer">
+                <div
+                    v-for="btn in btns"
+                    :key="btn"
+                    :class="['btn', btn.type]"
+                    @click="btn.callback"
+                >{{ btn.text }}</div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'Msgbox',
+    data () {
+        return {
+            show: true,
+            title: '',
+            content: '',
+            btns: []
+        }
+    },
+    methods: {
+        handleClose () {
+            this.show = false
+        }
+    }
+}
+</script>
+
+<style lang="scss" scoped>
 .msgbox-wrap {
     position: fixed;
     left: 0;
@@ -16,27 +57,19 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background: rgba(4, 4, 15, 0);
+    background: rgba(4, 4, 15, 0.4);
     transition: all 0.2s linear;
 }
 
 .msgbox-wrap .msgbox {
     position: relative;
     margin: 0 36px;
+    min-width: 440px;
     background: #ffffff;
     border-radius: 8px;
     transform-origin: center center;
-    transform: scale(0.2, 0.2);
-    transition: all 0.2s linear;
-    opacity: 0;
-}
-
-.msgbox-wrap.fade-in .msgbox-bg {
-    background: rgba(4, 4, 15, 0.4);
-}
-
-.msgbox-wrap.fade-in .msgbox {
     transform: scale(1, 1);
+    transition: all 0.2s linear;
     opacity: 1;
 }
 
@@ -57,7 +90,7 @@
     padding: 35px 30px;
     width: 30px;
     height: 30px;
-    background: url(../img/close.png) 30px 34px / 30px 30px no-repeat;
+    background: url(./images/close.png) 30px 34px / 30px 30px no-repeat;
 }
 
 .msgbox-wrap .msgbox-content {
@@ -94,3 +127,4 @@
     background: #24c77e;
     color: #ffffff;
 }
+</style>

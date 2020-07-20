@@ -1,3 +1,14 @@
+<template>
+    <div class="tip">Tip</div>
+</template>
+
+<script>
+export default {
+    name: 'Tip'
+}
+</script>
+
+<style lang="scss" scoped>
 .tip {
     position: fixed;
     left: 0;
@@ -65,15 +76,16 @@
 }
 
 .tip .tip-icon.success {
-    background: url(../img/tip-success.png) center center / 100% 100% no-repeat;
+    background: url(./images/tip-success.png) center center / 100% 100%
+        no-repeat;
 }
 
 .tip .tip-icon.warn {
-    background: url(../img/tip-warn.png) center center / 100% 100% no-repeat;
+    background: url(./images/tip-warn.png) center center / 100% 100% no-repeat;
 }
 
 .tip .tip-icon.error {
-    background: url(../img/tip-error.png) center center / 100% 100% no-repeat;
+    background: url(./images/tip-error.png) center center / 100% 100% no-repeat;
 }
 
 .tip .loading {
@@ -209,3 +221,4 @@
     letter-spacing: -0.46px;
     text-align: center;
 }
+</style>

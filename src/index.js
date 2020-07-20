@@ -1,8 +1,7 @@
-import { showTip, hideTip } from './utils/tip'
-import { msgbox } from './utils/msgbox'
+import Msgbox from '../packages/msgbox/index'
 
-export default function install(Vue) {
-    Vue.prototype.$showTip = showTip
-    Vue.prototype.$hideTip = hideTip
-    Vue.prototype.$msgbox = msgbox
+export default {
+    install(Vue) {
+        Vue.prototype.$msgbox = Msgbox
+    }
 }
