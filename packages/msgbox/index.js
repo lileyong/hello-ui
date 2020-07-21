@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import Main from './src/main.vue'
 
-const Msgbox = function (options) {
+const msgbox = function (option) {
     const MsgboxConstructor = Vue.extend(Main)
     const instance = new MsgboxConstructor({
-        data: options
+        data: option
     })
 
     instance.$mount()
     document.body.appendChild(instance.$el)
 }
 
-export default Msgbox
+export default msgbox

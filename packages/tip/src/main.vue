@@ -1,10 +1,42 @@
 <template>
-    <div class="tip">Tip</div>
+    <div :class="['tip', type]">
+        <div v-if="type !== 'tip'" class="tip-bg"></div>
+        <div class="tip-box">
+            <div class="tip-content">
+                <template v-if="type === 'loading'">
+                    <span class="tip-icon loading">
+                        <em></em>
+                        <em></em>
+                        <em></em>
+                        <em></em>
+                        <em></em>
+                        <em></em>
+                        <em></em>
+                        <em></em>
+                        <em></em>
+                        <em></em>
+                        <em></em>
+                        <em></em>
+                    </span>
+                </template>
+                <template v-else>
+                    <i :class="['tip-icon', type]"></i>
+                </template>
+                <p>{{ message }}</p>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
 export default {
-    name: 'Tip'
+    name: 'Tip',
+    data () {
+        return {
+            type: 'tip',
+            message: ''
+        }
+    }
 }
 </script>
 
@@ -31,13 +63,6 @@ export default {
     background: #000000;
 }
 
-.tip.hide,
-.tip.hide .tip-bg {
-    width: 0;
-    height: 0;
-    overflow: hidden;
-}
-
 .tip .tip-box {
     position: absolute;
     max-width: 600px;
@@ -54,12 +79,6 @@ export default {
 .tip.loading .tip-box {
     min-width: 240px;
     min-height: 234px;
-}
-
-.tip .tip-box.hide {
-    width: 0;
-    height: 0;
-    opacity: 0;
 }
 
 .tip .tip-content {
