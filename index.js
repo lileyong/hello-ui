@@ -1,5 +1,5 @@
-import msgbox from '../packages/msgbox/index'
-import { showTip, hideTip } from '../packages/tip/index'
+import msgbox from './packages/msgbox/index'
+import { showTip, hideTip } from './packages/tip/index'
 
 export default {
     install(Vue) {
