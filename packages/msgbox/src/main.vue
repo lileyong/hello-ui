@@ -6,11 +6,11 @@
                 {{ title }}
                 <span class="close" @click="handleClose"></span>
             </div>
-            <div class="msgbox-content">{{ content }}</div>
+            <div class="msgbox-content" v-html="content"></div>
             <div class="msgbox-footer">
                 <div
                     v-for="btn in btns"
-                    :key="btn"
+                    :key="btn.text"
                     :class="['btn', btn.type]"
                     @click="btn.callback"
                 >{{ btn.text }}</div>
